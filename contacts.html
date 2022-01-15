@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatti | Siberian Husky</title>
+    <!-- Tailwind css -->
+    <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
+    <!-- Tailwindcss -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.8.0/dist/cdn.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-blue': {
+                            50: '#c5cff79c',
+                            100: '#aebdf9',
+                            200: '#6f8bf9',
+                            300: '#446aff',
+                            400: '#385ff9',
+                            500: '#2b54f8',
+                            600: '#1f47e6',
+                            700: '#1a3eca',
+                            800: '#1738b9',
+                            900: '#1432a8',
+                        },
+                        gray: {
+                            50: '#fafafa',
+                            100: '#f5f5f5',
+                            200: '#eeeeee',
+                            300: '#e0e0e0',
+                            400: '#bdbdbd',
+                            500: '#9e9e9e',
+                            600: '#757575',
+                            700: '#616161',
+                            800: '#424242',
+                            900: '#212121',
+                        },
+                    }
+                }
+            }
+        }  
+    </script>
+    <!-- End Tailwindcss -->
+    <style>
+        html {
+            font-family: 'Montserrat', sans-serif !important;
+        }
+
+        .font-italiana {
+            font-family: 'Italiana', serif;
+        }
+
+        button:focus,
+        input:focus,
+        textarea:focus {
+            outline: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="min-h-screen container mx-auto">
+        <!-- Navbar -->
+        <div class="flex w-full">
+            <nav class="container p-6 mx-auto  lg:flex lg:justify-between lg:items-center">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <a class="text-2xl font-bold text-gray-800 dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300 uppercase"
+                            href="./index.html">
+                            <svg viewBox="0 0 301 301" xmlns="http://www.w3.org/2000/svg"
+                                class="w-10 fill-current text-deep-blue-500">
+                                <path
+                                    d="M0.94098 300.175H300.941V0.175003H0.94098V300.175ZM243.198 121.309H179.807V57.9177H243.198V121.309ZM58.6719 57.9177H122.099V179.04H243.198V242.432H58.6719V57.9177Z" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Mobile menu button -->
+                    <div class="flex lg:hidden">
+                        <button type="button"
+                            class="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600"
+                            aria-label="toggle menu">
+                            <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
+                                <path fill-rule="evenodd"
+                                    d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+                <div class="flex flex-col mt-4 space-y-2 lg:mt-0 lg:flex-row lg:space-x-16 lg:space-y-0">
+                    <a class="text-gray-700 dark:hover:text-deep-blue-400 hover:text-deep-blue-500" href="./blog.html">Blog</a>
+                    <a class="text-gray-700 dark:hover:text-deep-blue-400 hover:text-deep-blue-500" href="./aspect.html">Husky</a>
+                    <a class="text-deep-blue-500 underline"
+                        href="#">Contatti</a>
+                </div>
+
+                <a class="block px-5 py-2 mt-4 font-medium leading-5 text-center text-white capitalize bg-deep-blue-600 rounded-lg lg:mt-0 hover:bg-deep-blue-500 lg:w-auto"
+                    href="#">
+                    Get started
+                </a>
+            </nav>
+        </div>
+       
+        <!--  -->
+        <section class="text-gray-600 body-font relative">
+            <div class="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
+                <div
+                    class="lg:w-2/3 md:w-1/2 bg-gray-300 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
+                    <!-- <iframe class="absolute inset-0" style="filter: grayscale(1) contrast(1.2) opacity(0.4);" title="map" marginheight="0" marginwidth="0" scrolling="no" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5812.175452719671!2d13.0054524!3d43.2495832!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132dc5909b5f0d4d%3A0xa5e318a84d0f925f!2sPolo%20didattico%20%22Giacomo%20Renzoni%22%2C%20Scuola%20di%20Bioscienze%20e%20Medicina%20Veterinaria%20Unicam%20-%20Universit%C3%A0%20di%20Camerino!5e0!3m2!1sit!2sit!4v1642236122207!5m2!1sit!2sit" width="100%" height="100%" frameborder="0"></iframe> -->
+                    <iframe class="absolute inset-0" marginheight="0" marginwidth="0" scrolling="no"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5812.175452719671!2d13.0054524!3d43.2495832!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132dc5909b5f0d4d%3A0xa5e318a84d0f925f!2sPolo%20didattico%20%22Giacomo%20Renzoni%22%2C%20Scuola%20di%20Bioscienze%20e%20Medicina%20Veterinaria%20Unicam%20-%20Universit%C3%A0%20di%20Camerino!5e0!3m2!1sit!2sit!4v1642236122207!5m2!1sit!2sit"
+                        width="100%" height="100%" frameborder="0"></iframe>
+                    <div class="bg-white relative flex flex-wrap py-6 rounded shadow-md">
+                        <div class="lg:w-1/2 px-6">
+                            <h2
+                                class="title-font font-semibold text-gray-900 tracking-widest text-xs uppercase font-italiana">
+                                Indirizzo</h2>
+                            <a 
+                                href="https://www.google.com/maps/dir//Polo+didattico+%22Giacomo+Renzoni%22,+Scuola+di+Bioscienze+e+Medicina+Veterinaria+Unicam+-+Universit%C3%A0+di+Camerino,+Via+Raffaele+Fidanza,+15,+62024+Matelica+MC/@43.2495832,13.0054524,16z/data=!4m8!4m7!1m0!1m5!1m1!1s0x132dc5909b5f0d4d:0xa5e318a84d0f925f!2m2!1d13.0054524!2d43.2495832"
+                                target="_blank"
+                                class="leading-relaxed hover:underline hover:text-deep-blue-500 duration-300">
+                                Via Raffaele Fidanza, 15, 62024 Matelica MC
+                            </a>
+                        </div>
+                        <div class="lg:w-1/2 px-6 mt-4 lg:mt-0">
+                            <h2
+                                class="title-font font-semibold text-gray-900 tracking-widest text-xs uppercase font-italiana">
+                                Email</h2>
+                            <a href="mailto:paola.ciciani@unicam.it"
+                                class="leading-relaxed hover:underline hover:text-deep-blue-500 duration-300">paola.ciciani@unicam.it</a>
+                            <h2
+                                class="title-font font-semibold text-gray-900 tracking-widest text-xs uppercase font-italiana mt-4">
+                                Telefono</h2>
+                            <a href="tel:0737 404000"
+                                class="leading-relaxed hover:underline hover:text-deep-blue-500 duration-300">0737
+                                404000</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/3 md:w-1/2 bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
+                    <h2 class="text-gray-900 mb-1 font-medium title-font font-italiana text-5xl mb-5">
+                        <span class="text-deep-blue-500">C</span>ontattaci
+                    </h2>
+                    <div class="relative mb-4">
+                        <label for="name" class="leading-7 text-sm text-gray-600 font-italiana">Nome Completo</label>
+                        <input type="text" id="name" name="name" placeholder="Nome Completo"
+                            class="w-full bg-white border-b border-gray-300 hover:border-deep-blue-200 focus:border-deep-blue-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-300 ease-in-out">
+                    </div>
+                    <div class="relative mb-4">
+                        <label for="name" class="leading-7 text-sm text-gray-600 font-italiana">Email</label>
+                        <input type="text" id="name" name="name" placeholder="Email"
+                            class="w-full bg-white border-b border-gray-300 hover:border-deep-blue-200 focus:border-deep-blue-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-300 ease-in-out">
+                    </div>
+                    <div class="relative mb-4">
+                        <label for="name" class="leading-7 text-sm text-gray-600 font-italiana">Messaggio</label>
+                        <textarea id="message" name="message"
+                            class="w-full bg-white rounded border border-gray-300 hover:border-deep-blue-200 focus:border-deep-blue-500 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-300 ease-in-out"></textarea>
+                    </div>
+                    <!-- <button
+                        class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button> -->
+
+                        <button type="button"
+                        class="w-full px-8 py-3 text-lg rounded-lg bg-deep-blue-500 text-white hover:bg-deep-blue-700 duration-300">
+                        Invia
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!--  -->
+        <!-- Footer -->
+        <footer class="py-6 border-t">
+            <div class="container px-6 mx-auto">
+                <div class="grid justify-center lg:justify-between">
+                    <div class="flex flex-col self-center text-sm text-center md:block lg:col-start-1 md:space-x-6">
+                        <span>© 2022 ~ All rights reserved</span>
+                        <a href="#" class="hover:underline text-gray-400 duration-300">
+                            <span>Privacy policy</span>
+                        </a>
+                        <a href="#" class="hover:underline text-gray-400 duration-300">
+                            <span>Terms of service</span>
+                        </a>
+                    </div>
+                    <div class="flex justify-center pt-4 space-x-4 lg:pt-0 lg:col-end-13">
+                        <a href="https://www.facebook.com/groups/15388949649" title="Facebook" target="_blank"
+                            class="flex items-center justify-center text-gray-800 hover:text-deep-blue-500 duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24"
+                                class="w-6 fill-current">
+                                <path
+                                    d="M20.9,2H3.1A1.1,1.1,0,0,0,2,3.1V20.9A1.1,1.1,0,0,0,3.1,22h9.58V14.25h-2.6v-3h2.6V9a3.64,3.64,0,0,1,3.88-4,20.26,20.26,0,0,1,2.33.12v2.7H17.3c-1.26,0-1.5.6-1.5,1.47v1.93h3l-.39,3H15.8V22h5.1A1.1,1.1,0,0,0,22,20.9V3.1A1.1,1.1,0,0,0,20.9,2Z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/universitacamerino/" title="Instagram" target="_blank"
+                            class="flex items-center justify-center text-gray-800 hover:text-deep-blue-500 duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24"
+                                class="w-6 fill-current">
+                                <path
+                                    d="M17.34,5.46h0a1.2,1.2,0,1,0,1.2,1.2A1.2,1.2,0,0,0,17.34,5.46Zm4.6,2.42a7.59,7.59,0,0,0-.46-2.43,4.94,4.94,0,0,0-1.16-1.77,4.7,4.7,0,0,0-1.77-1.15,7.3,7.3,0,0,0-2.43-.47C15.06,2,14.72,2,12,2s-3.06,0-4.12.06a7.3,7.3,0,0,0-2.43.47A4.78,4.78,0,0,0,3.68,3.68,4.7,4.7,0,0,0,2.53,5.45a7.3,7.3,0,0,0-.47,2.43C2,8.94,2,9.28,2,12s0,3.06.06,4.12a7.3,7.3,0,0,0,.47,2.43,4.7,4.7,0,0,0,1.15,1.77,4.78,4.78,0,0,0,1.77,1.15,7.3,7.3,0,0,0,2.43.47C8.94,22,9.28,22,12,22s3.06,0,4.12-.06a7.3,7.3,0,0,0,2.43-.47,4.7,4.7,0,0,0,1.77-1.15,4.85,4.85,0,0,0,1.16-1.77,7.59,7.59,0,0,0,.46-2.43c0-1.06.06-1.4.06-4.12S22,8.94,21.94,7.88ZM20.14,16a5.61,5.61,0,0,1-.34,1.86,3.06,3.06,0,0,1-.75,1.15,3.19,3.19,0,0,1-1.15.75,5.61,5.61,0,0,1-1.86.34c-1,.05-1.37.06-4,.06s-3,0-4-.06A5.73,5.73,0,0,1,6.1,19.8,3.27,3.27,0,0,1,5,19.05a3,3,0,0,1-.74-1.15A5.54,5.54,0,0,1,3.86,16c0-1-.06-1.37-.06-4s0-3,.06-4A5.54,5.54,0,0,1,4.21,6.1,3,3,0,0,1,5,5,3.14,3.14,0,0,1,6.1,4.2,5.73,5.73,0,0,1,8,3.86c1,0,1.37-.06,4-.06s3,0,4,.06a5.61,5.61,0,0,1,1.86.34A3.06,3.06,0,0,1,19.05,5,3.06,3.06,0,0,1,19.8,6.1,5.61,5.61,0,0,1,20.14,8c.05,1,.06,1.37.06,4S20.19,15,20.14,16ZM12,6.87A5.13,5.13,0,1,0,17.14,12,5.12,5.12,0,0,0,12,6.87Zm0,8.46A3.33,3.33,0,1,1,15.33,12,3.33,3.33,0,0,1,12,15.33Z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.unicam.it/" title="Sito web" target="_blank"
+                            class="flex items-center justify-center text-gray-800 hover:text-deep-blue-500 duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 fill-current">
+                                <path
+                                    d="M21.41,8.64s0,0,0-.05a10,10,0,0,0-18.78,0s0,0,0,.05a9.86,9.86,0,0,0,0,6.72s0,0,0,.05a10,10,0,0,0,18.78,0s0,0,0-.05a9.86,9.86,0,0,0,0-6.72ZM4.26,14a7.82,7.82,0,0,1,0-4H6.12a16.73,16.73,0,0,0,0,4Zm.82,2h1.4a12.15,12.15,0,0,0,1,2.57A8,8,0,0,1,5.08,16Zm1.4-8H5.08A8,8,0,0,1,7.45,5.43,12.15,12.15,0,0,0,6.48,8ZM11,19.7A6.34,6.34,0,0,1,8.57,16H11ZM11,14H8.14a14.36,14.36,0,0,1,0-4H11Zm0-6H8.57A6.34,6.34,0,0,1,11,4.3Zm7.92,0h-1.4a12.15,12.15,0,0,0-1-2.57A8,8,0,0,1,18.92,8ZM13,4.3A6.34,6.34,0,0,1,15.43,8H13Zm0,15.4V16h2.43A6.34,6.34,0,0,1,13,19.7ZM15.86,14H13V10h2.86a14.36,14.36,0,0,1,0,4Zm.69,4.57a12.15,12.15,0,0,0,1-2.57h1.4A8,8,0,0,1,16.55,18.57ZM19.74,14H17.88A16.16,16.16,0,0,0,18,12a16.28,16.28,0,0,0-.12-2h1.86a7.82,7.82,0,0,1,0,4Z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
