@@ -68,22 +68,24 @@
 
 <body>
     <div class="min-h-screen container mx-auto">
-        <!-- Navbar -->
-        <div class="flex w-full">
-            <nav class="container p-6 mx-auto  lg:flex lg:justify-between lg:items-center">
+         <!-- Navbar -->
+         <div class="flex w-full">
+            <nav x-data="{mobileActive: false}" @click.away="mobileActive = false" class="border-b lg:border-0 container p-6 mx-auto  lg:flex lg:justify-between lg:items-center">
                 <div class="flex items-center justify-between">
                     <div>
                         <a class="text-2xl font-bold text-gray-800 dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300 uppercase"
                             href="../index.html">
-                            <svg viewBox="0 0 301 301" xmlns="http://www.w3.org/2000/svg" class="w-10 fill-current text-deep-blue-500">
-                                <path d="M0.94098 300.175H300.941V0.175003H0.94098V300.175ZM243.198 121.309H179.807V57.9177H243.198V121.309ZM58.6719 57.9177H122.099V179.04H243.198V242.432H58.6719V57.9177Z"/>
+                            <svg viewBox="0 0 301 301" xmlns="http://www.w3.org/2000/svg"
+                                class="w-10 fill-current text-deep-blue-500">
+                                <path
+                                    d="M0.94098 300.175H300.941V0.175003H0.94098V300.175ZM243.198 121.309H179.807V57.9177H243.198V121.309ZM58.6719 57.9177H122.099V179.04H243.198V242.432H58.6719V57.9177Z" />
                             </svg>
                         </a>
                     </div>
 
                     <!-- Mobile menu button -->
                     <div class="flex lg:hidden">
-                        <button type="button"
+                        <button type="button" @click="mobileActive = !mobileActive"
                             class="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600"
                             aria-label="toggle menu">
                             <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
@@ -96,13 +98,17 @@
                 </div>
 
                 <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
-                <div class="flex flex-col mt-4 space-y-2 lg:mt-0 lg:flex-row lg:space-x-16 lg:space-y-0">
+                <div 
+                    class="flex flex-col mt-4 space-y-2 lg:mt-0 lg:flex-row lg:space-x-16 lg:space-y-0"
+                    :class="!mobileActive ? 'hidden'  : 'block' ">
                     <a class="text-gray-700 dark:hover:text-deep-blue-400 hover:text-deep-blue-500" href="./blog.html">Blog</a>
-                    <a class="text-deep-blue-500 underline" href="#">Husky</a>
+                    <a class="text-deep-blue-500 underline" href="javascript:;">Husky</a>
                     <a class="text-gray-700 dark:hover:text-deep-blue-400 hover:text-deep-blue-500" href="./contacts.html">Contatti</a>
                 </div>
 
-                <a class="block px-5 py-2 mt-4 font-medium leading-5 text-center text-white capitalize bg-deep-blue-600 rounded-lg lg:mt-0 hover:bg-deep-blue-500 lg:w-auto"
+                <a 
+                    class="block px-5 py-2 mt-4 font-medium leading-5 text-center text-white capitalize bg-deep-blue-600 rounded-lg lg:mt-0 hover:bg-deep-blue-500 lg:w-auto"
+                    :class="!mobileActive ? 'hidden'  : 'block' "
                     href="#">
                     Get started
                 </a>
@@ -145,7 +151,7 @@
                     </p>
                 </div>
             </div>
-            <div class="container w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mx-auto mb-10">
+            <div class="container w-full px-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mx-auto mb-10">
                 <div class="w-full h-full lg:h-60 relative rounded">
                     <img 
                     class="w-full h-60 object-cover object-center rounded" 
