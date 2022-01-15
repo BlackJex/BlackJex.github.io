@@ -74,7 +74,7 @@
                 <div class="flex items-center justify-between">
                     <div>
                         <a class="text-2xl font-bold text-gray-800 dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300 uppercase"
-                            href="#">
+                            href="javascript:;">
                             <svg viewBox="0 0 301 301" xmlns="http://www.w3.org/2000/svg" class="w-10 fill-current text-deep-blue-500">
                                 <path d="M0.94098 300.175H300.941V0.175003H0.94098V300.175ZM243.198 121.309H179.807V57.9177H243.198V121.309ZM58.6719 57.9177H122.099V179.04H243.198V242.432H58.6719V57.9177Z"/>
                             </svg>
@@ -149,7 +149,7 @@
         <!-- History -->
         <section class="text-gray-600 body-font" x-data="{ page: 1, total_pages: 3 }">
             <div class="container w-full mx-auto flex px-5 py-24 lg:flex-row flex-col items-center lg:space-x-8">
-                <div class="lg:w-2/5 flex flex-col lg:items-start lg:text-left mb-16 lg:mb-0 items-center text-center">
+                <div class="lg:w-2/5 flex flex-col lg:items-start text-left mb-16 lg:mb-0 items-center">
                     <h1 class="font-italiana title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
                         Storia del <span class="text-blue-500">S</span>iberian <span class="text-blue-500">H</span>usky
                     </h1>
@@ -182,7 +182,8 @@
                         il siero anti-difterico.
                     </p>
                 </div>
-                <div class=" md:w-2/3 lg:w-2/3 w-5/6 flex items-center justify-center space-x-2">
+                <!-- LG -->
+                <div class="hidden w-full md:w-2/3 lg:w-2/3 lg:flex items-center justify-center space-x-2">
                     <button @click="if(page > 1){ page-=1 }"
                         class="flex items-center justify-center p-1 rounded-full border hover:bg-deep-blue-50 hover:text-deep-blue-500 hover:border-deep-blue-500 duration-300"
                         title="Indietro">
@@ -249,11 +250,81 @@
                         </svg>
                     </button>
                 </div>
+                <!-- SM - MD -->
+                <div class="w-full md:w-2/3 lg:w-2/3 flex flex-col items-center justify-center space-y-2 lg:hidden ">
+                    <div
+                        class="box-content relative flex items-center w-full h-auto max-w-2xl py-5 mx-auto overflow-hidden xl:w-3/5 rounded-xl">
+                        <!-- Slide Page 1 -->
+                        <div class="flex space-x-6 transition duration-500 ease-out transform relative"
+                            :class="{ '-translate-x-full pr-10' : page > 1, 'relative': page == 1, 'absolute': page != 1 }">
+                            <div class="w-3/4 mx-auto relative">
+                                <img class="w-full object-cover rounded" alt="hero"
+                                    src="https://source.unsplash.com/VwAiY1FCII8">
+                                <!-- MEcjRARoLug -->
+                                <div
+                                    class="absolute bg-opacity-50 inset-x-0 bottom-0 py-3 bg-black z-10 flex items-center justify-center">
+                                    <span class="text-white text-xl font-semibold">
+                                        Esemplare maschio adulto
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide Page 2 -->
+                        <div class="flex space-x-6 transition duration-500 ease-out transform relative"
+                            :class="{ '-translate-x-full pr-10' : page > 2, 'translate-x-full' : page < 2, 'translate-x-0 ml-5' : page == 2, 'relative': page == 2, 'absolute': page != 2 }">
+                            <div class="w-3/4 mx-auto relative">
+                                <img class="w-full object-cover rounded" alt="hero"
+                                    src="https://source.unsplash.com/1vIgqMIeDDI">
+                                <!-- X8LOQfnYS5Y -->
+                                <div
+                                    class="absolute bg-opacity-50 inset-x-0 bottom-0 py-3 bg-black z-10 flex items-center justify-center">
+                                    <span class="text-white text-xl font-semibold">
+                                        Esemplare femmina adulta
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide Page 3 -->
+                        <div class="flex space-x-6 transition duration-500 ease-out transform relative"
+                            :class="{ 'translate-x-full' : page < 3, 'translate-x-0 ml-5' : page == 3, 'relative': page == 3, 'absolute': page != 3 }">
+                            <div class="w-3/4 mx-auto relative">
+                                <img class="w-full object-cover rounded" alt="hero"
+                                    src="https://source.unsplash.com/ownymr5QrZk">
+                                <!-- X8LOQfnYS5Y -->
+                                <div
+                                    class="absolute bg-opacity-50 inset-x-0 bottom-0 py-3 bg-black z-10 flex items-center justify-center">
+                                    <span class="text-white text-xl font-semibold">
+                                        Esemplare femmina cucciola
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="flex items-center justify-center space-x-5">
+                        <button @click="if(page > 1){ page-=1 }"
+                            class="flex items-center justify-center p-1 rounded-full border hover:bg-deep-blue-50 hover:text-deep-blue-500 hover:border-deep-blue-500 duration-300"
+                            title="Indietro">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-10 fill-current">
+                                <path
+                                    d="M11.29,12l3.54-3.54a1,1,0,0,0,0-1.41,1,1,0,0,0-1.42,0L9.17,11.29a1,1,0,0,0,0,1.42L13.41,17a1,1,0,0,0,.71.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41Z" />
+                            </svg>
+                        </button>
+                        <button @click="if(page < total_pages){ page+=1 }"
+                            class="flex items-center justify-center p-1 rounded-full border hover:bg-deep-blue-50 hover:text-deep-blue-500 hover:border-deep-blue-500 duration-300"
+                            title="Avanti">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-10 fill-current">
+                                <path
+                                    d="M14.83,11.29,10.59,7.05a1,1,0,0,0-1.42,0,1,1,0,0,0,0,1.41L12.71,12,9.17,15.54a1,1,0,0,0,0,1.41,1,1,0,0,0,.71.29,1,1,0,0,0,.71-.29l4.24-4.24A1,1,0,0,0,14.83,11.29Z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
             </div>
         </section>
         <!-- News -->
         <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full md:px-24 lg:px-8 lg:py-20">
-            <h1 class="title-font sm:text-7xl text-3xl mb-4 font-medium text-gray-900 font-italiana text-center">
+            <h1 class="title-font sm:text-7xl text-5xl mb-4 font-medium text-gray-900 font-italiana text-center">
                 <span class="text-deep-blue-500">N</span>ews
             </h1>
             <div class="grid gap-8 lg:grid-cols-3 sm:max-w-sm sm:mx-auto lg:max-w-full">
