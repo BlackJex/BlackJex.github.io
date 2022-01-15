@@ -101,23 +101,24 @@
                 <div 
                     class="lg:flex flex-col mt-4 space-y-2 lg:mt-0 lg:flex-row lg:space-x-16 lg:space-y-0"
                     :class="!mobileActive ? 'hidden'  : 'flex' ">
-                    <a class="text-gray-700 dark:hover:text-deep-blue-400 hover:text-deep-blue-500" href="./blog.html">Blog</a>
-                    <a class="text-deep-blue-500 underline" href="javascript:;">Husky</a>
-                    <a class="text-gray-700 dark:hover:text-deep-blue-400 hover:text-deep-blue-500" href="./contacts.html">Contatti</a>
+                    <a class="text-gray-700 dark:hover:text-deep-blue-400 hover:text-deep-blue-500 py-2 text-center lg:py-0" href="./blog.html">Blog</a>
+                    <a class="text-deep-blue-500 underline py-2 text-center lg:py-0" href="javascript:;">Husky</a>
+                    <a class="text-gray-700 dark:hover:text-deep-blue-400 hover:text-deep-blue-500 py-2 text-center lg:py-0" href="./contacts.html">Contatti</a>
                 </div>
 
                 <a 
                     class="lg:block px-5 py-2 mt-4 font-medium leading-5 text-center text-white capitalize bg-deep-blue-600 rounded-lg lg:mt-0 hover:bg-deep-blue-500 lg:w-auto"
                     :class="!mobileActive ? 'hidden'  : 'block' "
-                    href="#">
-                    Get started
+                    title="Accedi"
+                    href="./signin.html">
+                    Accedi
                 </a>
             </nav>
         </div>
        
         <!-- Aspect -->
         <section class="text-gray-600">
-            <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+            <div class="container mx-auto flex px-5 py-16 lg:py-24 items-center justify-center flex-col">
                 <img 
                     class="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" 
                     alt="hero"

@@ -99,16 +99,17 @@
                 <div 
                     class="lg:flex flex-col mt-4 space-y-2 lg:mt-0 lg:flex-row lg:space-x-16 lg:space-y-0"
                     :class="!mobileActive ? 'hidden'  : 'flex' ">
-                    <a class="text-gray-700 dark:hover:text-deep-blue-400 hover:text-deep-blue-500" href="./pages/blog.html">Blog</a>
-                    <a class="text-gray-700 dark:hover:text-deep-blue-400 hover:text-deep-blue-500" href="./pages/aspect.html">Husky</a>
-                    <a class="text-gray-700 dark:hover:text-deep-blue-400 hover:text-deep-blue-500" href="./pages/contacts.html">Contatti</a>
+                    <a class="text-gray-700 dark:hover:text-deep-blue-400 hover:text-deep-blue-500 text-center py-3 lg:py-0" href="./pages/blog.html">Blog</a>
+                    <a class="text-gray-700 dark:hover:text-deep-blue-400 hover:text-deep-blue-500 text-center py-3 lg:py-0" href="./pages/aspect.html">Husky</a>
+                    <a class="text-gray-700 dark:hover:text-deep-blue-400 hover:text-deep-blue-500 text-center py-3 lg:py-0" href="./pages/contacts.html">Contatti</a>
                 </div>
 
                 <a 
                     class="lg:block px-5 py-2 mt-4 font-medium leading-5 text-center text-white capitalize bg-deep-blue-600 rounded-lg lg:mt-0 hover:bg-deep-blue-500 lg:w-auto"
                     :class="!mobileActive ? 'hidden'  : 'block' "
-                    href="#">
-                    Get started
+                    title="Accedi"
+                    href="./pages/signin.html">
+                    Accedi
                 </a>
             </nav>
         </div>
@@ -426,6 +427,9 @@
                                 paola.ciciani@unicam.it 
                             </a>
                         </p>
+                    </div>
+                    <div>
+                        <img src="./assets/img/qr-code.png" class="w-60 mx-auto lg:w-52 lg:ml-0" alt="">
                     </div>
                 </div>
                 <form class="flex flex-col p-6 space-y-6 shadow-lg rounded-lg">
