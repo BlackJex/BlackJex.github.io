@@ -68,11 +68,11 @@
 <body class="min-h-screen">
     <!-- Navbar -->
     <div class="flex w-full">
-        <nav class="container p-6 mx-auto  lg:flex lg:justify-between lg:items-center">
+        <nav x-data="{mobileActive: false}" @click.away="mobileActive = false" class="border-b lg:border-0 container p-6 mx-auto  lg:flex lg:justify-between lg:items-center">
             <div class="flex items-center justify-between">
                 <div>
                     <a class="text-2xl font-bold text-gray-800 dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300 uppercase"
-                        href="../index.html">
+                        href="#">
                         <svg viewBox="0 0 301 301" xmlns="http://www.w3.org/2000/svg" class="w-10 fill-current text-deep-blue-500">
                             <path d="M0.94098 300.175H300.941V0.175003H0.94098V300.175ZM243.198 121.309H179.807V57.9177H243.198V121.309ZM58.6719 57.9177H122.099V179.04H243.198V242.432H58.6719V57.9177Z"/>
                         </svg>
@@ -80,7 +80,7 @@
                 </div>
 
                 <!-- Mobile menu button -->
-                <div class="flex lg:hidden">
+                <div class="flex lg:hidden" @click="mobileActive = !mobileActive">
                     <button type="button"
                         class="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600"
                         aria-label="toggle menu">
@@ -94,13 +94,17 @@
             </div>
 
             <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
-            <div class="flex flex-col mt-4 space-y-2 lg:mt-0 lg:flex-row lg:space-x-16 lg:space-y-0">
-                <a class="text-gray-700 dark:hover:text-deep-blue-400 hover:text-deep-blue-500" href="./blog.html">Blog</a>
-                <a class="text-gray-700 dark:hover:text-deep-blue-400 hover:text-deep-blue-500" href="./aspect.html">Husky</a>
-                <a class="text-gray-700 dark:hover:text-deep-blue-400 hover:text-deep-blue-500" href="./contacts.html">Contatti</a>
+            <div 
+                class="flex flex-col mt-4 space-y-2 lg:mt-0 lg:flex-row lg:space-x-16 lg:space-y-0"
+                :class="!mobileActive ? 'hidden'  : 'block' ">
+                <a class="text-gray-700 dark:hover:text-deep-blue-400 hover:text-deep-blue-500" href="./pages/blog.html">Blog</a>
+                <a class="text-gray-700 dark:hover:text-deep-blue-400 hover:text-deep-blue-500" href="./pages/aspect.html">Husky</a>
+                <a class="text-gray-700 dark:hover:text-deep-blue-400 hover:text-deep-blue-500" href="./pages/contacts.html">Contatti</a>
             </div>
 
-            <a class="block px-5 py-2 mt-4 font-medium leading-5 text-center text-white capitalize bg-deep-blue-600 rounded-lg lg:mt-0 hover:bg-deep-blue-500 lg:w-auto"
+            <a 
+                class="px-5 py-2 mt-4 font-medium leading-5 text-center text-white capitalize bg-deep-blue-600 rounded-lg lg:mt-0 hover:bg-deep-blue-500 lg:w-auto"
+                :class="!mobileActive ? 'hidden'  : 'block' "
                 href="#">
                 Get started
             </a>
@@ -113,18 +117,18 @@
             class="object-cover w-full h-full rounded" alt="" />
     </section> 
     <!-- Header -->
-    <section class="container mx-auto py-10 flex flex-col items-center">
-        <h3 class="font-bold text-xl text-gray-400 text-center">
+    <section class="container mx-auto px-5 md:px-0 py-10 flex flex-col items-center">
+        <h3 class="font-bold text-sm md:text-xl text-gray-400 text-center">
             05 Gennaio 2022
         </h3>
-        <h1 class="font-bold text-6xl text-center font-italiana">
+        <h1 class="font-bold text-3xl lg:text-6xl text-center font-italiana">
             <span class="text-deep-blue-500">I</span>l re del nord
         </h1>
     </section>
     <!-- Body -->
-    <section class="container mx-auto flex my-14">
-        <div class="w-2/3 px-32">
-            <p class="text-lg">
+    <section class="container mx-auto flex flex-col lg:flex-row my-8 lg:my-14">
+        <div class="lg:w-2/3 px-5 lg:px-32">
+            <p class="lg:text-lg">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea consequuntur nam quam. Iste impedit eos 
                 quam quae reprehenderit nesciunt dolorem tenetur? Labore animi facere repudiandae rerum aperiam 
                 ratione enim dolor.
@@ -143,7 +147,7 @@
             </p>
             <br>
             <br>
-            <p class="text-gray-400 text-lg italic flex items-center">
+            <p class="text-gray-500 text-lg italic flex items-center">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea consequuntur nam quam. Iste impedit eos 
                 quam quae reprehenderit nesciunt dolorem tenetur?
 
@@ -159,7 +163,7 @@
                 ratione enim dolor.
             </p>
         </div>
-        <div class="w-1/3 px-10 flex flex-col gap-5">
+        <div class="lg:w-1/3 px-5 lg:px-10 flex flex-wrap lg:flex-col sapce-x-5 lg:space-x-0 lg:space-y-5 mt-10">
             <h1 class="font-semibold text-lg">
                 Tags
             </h1>
@@ -184,38 +188,36 @@
                 </span>
             </div>
             <hr>
-            <h1 class="font-semibold text-lg">
-                Condividi
-            </h1>
-            <div class="flex flex-wrap items-center justidy-center gap-5">
-                <button 
-                    class="p-3 bg-blue-500 hover:bg-blue-700 text-white flex items-center justify-center rounded-full duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" class="w-5 fill-current"><path d="M15.12,5.32H17V2.14A26.11,26.11,0,0,0,14.26,2C11.54,2,9.68,3.66,9.68,6.7V9.32H6.61v3.56H9.68V22h3.68V12.88h3.06l.46-3.56H13.36V7.05C13.36,6,13.64,5.32,15.12,5.32Z"/></svg>
-                </button>
-                <button 
-                    class="p-3 bg-cyan-300 hover:bg-cyan-500 text-white flex items-center justify-center rounded-full duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" class="w-5 fill-current"><path d="M22.99121,3.9502a.99942.99942,0,0,0-1.51074-.85938,7.47956,7.47956,0,0,1-1.873.793,5.15234,5.15234,0,0,0-3.374-1.24219,5.23238,5.23238,0,0,0-5.22363,5.06348A11.03194,11.03194,0,0,1,4.19629,3.78125,1.01154,1.01154,0,0,0,3.33887,3.416a.99852.99852,0,0,0-.78516.5,5.2755,5.2755,0,0,0-.24219,4.76855l-.00195.00195a1.0411,1.0411,0,0,0-.49512.88868,3.04174,3.04174,0,0,0,.02637.43945,5.1854,5.1854,0,0,0,1.56836,3.3125.99813.99813,0,0,0-.06641.76953,5.20436,5.20436,0,0,0,2.36231,2.92187,7.46464,7.46464,0,0,1-3.58985.44825.99975.99975,0,0,0-.665,1.833A12.94248,12.94248,0,0,0,8.46,21.36133,12.7878,12.7878,0,0,0,20.9248,11.998,12.82166,12.82166,0,0,0,21.46,8.35156c0-.06543,0-.13281-.001-.20019A5.76963,5.76963,0,0,0,22.99121,3.9502ZM19.68457,7.16211a.995.995,0,0,0-.2334.70215c.00977.165.00879.331.00879.4873a10.82371,10.82371,0,0,1-.4541,3.08106A10.68457,10.68457,0,0,1,8.46,19.36133a10.93791,10.93791,0,0,1-2.55078-.30078,9.47951,9.47951,0,0,0,2.94238-1.56348A1.00033,1.00033,0,0,0,8.25,15.71094a3.208,3.208,0,0,1-2.21387-.93457q.22413-.04248.44532-.10547a1.00026,1.00026,0,0,0-.08008-1.94336,3.19824,3.19824,0,0,1-2.25-1.72559,5.29929,5.29929,0,0,0,.54492.0459,1.02093,1.02093,0,0,0,.9834-.69629A.9998.9998,0,0,0,5.2793,9.21484,3.19559,3.19559,0,0,1,3.85547,6.542c0-.0664.00195-.13281.00586-.19824a13.01365,13.01365,0,0,0,8.209,3.47949,1.02046,1.02046,0,0,0,.81739-.3584,1.00037,1.00037,0,0,0,.206-.86816,3.15653,3.15653,0,0,1-.08691-.72852A3.23,3.23,0,0,1,16.2334,4.6416a3.18428,3.18428,0,0,1,2.34472,1.02051A.993.993,0,0,0,19.499,5.96a9.27073,9.27073,0,0,0,1.21192-.32226A6.68126,6.68126,0,0,1,19.68457,7.16211Z"/></svg>
-                </button>
-                <button 
-                    class="p-3 bg-red-500 hover:bg-red-700 text-white flex items-center justify-center rounded-full duration-300">
-                    <svg version="1.1" id="lni_lni-pinterest" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="w-5 fill-current" viewBox="0 0 64 64" xml:space="preserve"><path d="M1.8,32.1C2,41.4,6.3,50.7,13.6,56.3c2.3,1.7,4.8,2.7,7.4,3.8c-1.1-7.1,1.6-14.2,3.1-21.2c0.2-0.7,0.3-1.5,0.3-2.3c0-1.1-0.4-2.2-0.7-3.3c-0.3-1.8-0.1-3.7,0.7-5.4c1.1-2.3,3.7-4.1,6-3.2c2.1,0.8,2.9,3.6,2.5,5.8c-0.4,2.3-1.6,4.3-2.2,6.5c-0.7,2.2-0.6,4.9,1,6.4c1.5,1.4,3.9,1.5,5.8,0.7c2.8-1.2,4.6-4,5.7-6.8c2-5.2,1.6-11.8-2.5-15.6C39,20,36.6,18.9,34,18.5c-4.4-0.7-9.2,0.6-12.3,3.8s-4.5,8.1-3.2,12.3c0.4,1.4,1.2,2.8,1.5,4.2s0.2,3.2-0.8,4.2c-0.1,0.1-0.2,0.2-0.4,0.3c-0.2,0.1-0.5-0.1-0.7-0.2c-1.9-1.2-3.4-3.1-4.3-5.1c-2.8-6.1-1.4-13.7,3-18.7s11.5-7.4,18.1-6.5c6.2,0.8,12.3,4.5,14.9,10.2c1.6,3.4,1.9,7.3,1.3,11c-0.6,3.8-2.1,7.4-4.6,10.3s-6.1,4.9-9.9,5.1c-3.1,0.2-6.4-0.9-8-3.5c-1,5.4-2.9,10.7-5.7,15.4c-0.1,0.2,6.4,1.6,7,1.6c7.4,0.6,15.3-2.3,21.1-6.9C67,43.3,65.3,19,49.5,7c-8.2-6.3-17.9-7.5-27.5-4.1c-2.9,1-5.6,2.7-8.1,4.5c-4,3-7.2,6.9-9.3,11.4C2.5,22.9,1.7,27.5,1.8,32.1z"/></svg>
-                </button>
+            <div class="flex flex-col space-y-3 mt-6">
+                <h1 class="font-semibold text-lg">
+                    Condividi
+                </h1>
+                <div class="flex flex-wrap items-center justidy-center gap-5">
+                    <button 
+                        class="p-3 bg-blue-500 hover:bg-blue-700 text-white flex items-center justify-center rounded-full duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" class="w-5 fill-current"><path d="M15.12,5.32H17V2.14A26.11,26.11,0,0,0,14.26,2C11.54,2,9.68,3.66,9.68,6.7V9.32H6.61v3.56H9.68V22h3.68V12.88h3.06l.46-3.56H13.36V7.05C13.36,6,13.64,5.32,15.12,5.32Z"/></svg>
+                    </button>
+                    <button 
+                        class="p-3 bg-cyan-300 hover:bg-cyan-500 text-white flex items-center justify-center rounded-full duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" class="w-5 fill-current"><path d="M22.99121,3.9502a.99942.99942,0,0,0-1.51074-.85938,7.47956,7.47956,0,0,1-1.873.793,5.15234,5.15234,0,0,0-3.374-1.24219,5.23238,5.23238,0,0,0-5.22363,5.06348A11.03194,11.03194,0,0,1,4.19629,3.78125,1.01154,1.01154,0,0,0,3.33887,3.416a.99852.99852,0,0,0-.78516.5,5.2755,5.2755,0,0,0-.24219,4.76855l-.00195.00195a1.0411,1.0411,0,0,0-.49512.88868,3.04174,3.04174,0,0,0,.02637.43945,5.1854,5.1854,0,0,0,1.56836,3.3125.99813.99813,0,0,0-.06641.76953,5.20436,5.20436,0,0,0,2.36231,2.92187,7.46464,7.46464,0,0,1-3.58985.44825.99975.99975,0,0,0-.665,1.833A12.94248,12.94248,0,0,0,8.46,21.36133,12.7878,12.7878,0,0,0,20.9248,11.998,12.82166,12.82166,0,0,0,21.46,8.35156c0-.06543,0-.13281-.001-.20019A5.76963,5.76963,0,0,0,22.99121,3.9502ZM19.68457,7.16211a.995.995,0,0,0-.2334.70215c.00977.165.00879.331.00879.4873a10.82371,10.82371,0,0,1-.4541,3.08106A10.68457,10.68457,0,0,1,8.46,19.36133a10.93791,10.93791,0,0,1-2.55078-.30078,9.47951,9.47951,0,0,0,2.94238-1.56348A1.00033,1.00033,0,0,0,8.25,15.71094a3.208,3.208,0,0,1-2.21387-.93457q.22413-.04248.44532-.10547a1.00026,1.00026,0,0,0-.08008-1.94336,3.19824,3.19824,0,0,1-2.25-1.72559,5.29929,5.29929,0,0,0,.54492.0459,1.02093,1.02093,0,0,0,.9834-.69629A.9998.9998,0,0,0,5.2793,9.21484,3.19559,3.19559,0,0,1,3.85547,6.542c0-.0664.00195-.13281.00586-.19824a13.01365,13.01365,0,0,0,8.209,3.47949,1.02046,1.02046,0,0,0,.81739-.3584,1.00037,1.00037,0,0,0,.206-.86816,3.15653,3.15653,0,0,1-.08691-.72852A3.23,3.23,0,0,1,16.2334,4.6416a3.18428,3.18428,0,0,1,2.34472,1.02051A.993.993,0,0,0,19.499,5.96a9.27073,9.27073,0,0,0,1.21192-.32226A6.68126,6.68126,0,0,1,19.68457,7.16211Z"/></svg>
+                    </button>
+                    <button 
+                        class="p-3 bg-red-500 hover:bg-red-700 text-white flex items-center justify-center rounded-full duration-300">
+                        <svg version="1.1" id="lni_lni-pinterest" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="w-5 fill-current" viewBox="0 0 64 64" xml:space="preserve"><path d="M1.8,32.1C2,41.4,6.3,50.7,13.6,56.3c2.3,1.7,4.8,2.7,7.4,3.8c-1.1-7.1,1.6-14.2,3.1-21.2c0.2-0.7,0.3-1.5,0.3-2.3c0-1.1-0.4-2.2-0.7-3.3c-0.3-1.8-0.1-3.7,0.7-5.4c1.1-2.3,3.7-4.1,6-3.2c2.1,0.8,2.9,3.6,2.5,5.8c-0.4,2.3-1.6,4.3-2.2,6.5c-0.7,2.2-0.6,4.9,1,6.4c1.5,1.4,3.9,1.5,5.8,0.7c2.8-1.2,4.6-4,5.7-6.8c2-5.2,1.6-11.8-2.5-15.6C39,20,36.6,18.9,34,18.5c-4.4-0.7-9.2,0.6-12.3,3.8s-4.5,8.1-3.2,12.3c0.4,1.4,1.2,2.8,1.5,4.2s0.2,3.2-0.8,4.2c-0.1,0.1-0.2,0.2-0.4,0.3c-0.2,0.1-0.5-0.1-0.7-0.2c-1.9-1.2-3.4-3.1-4.3-5.1c-2.8-6.1-1.4-13.7,3-18.7s11.5-7.4,18.1-6.5c6.2,0.8,12.3,4.5,14.9,10.2c1.6,3.4,1.9,7.3,1.3,11c-0.6,3.8-2.1,7.4-4.6,10.3s-6.1,4.9-9.9,5.1c-3.1,0.2-6.4-0.9-8-3.5c-1,5.4-2.9,10.7-5.7,15.4c-0.1,0.2,6.4,1.6,7,1.6c7.4,0.6,15.3-2.3,21.1-6.9C67,43.3,65.3,19,49.5,7c-8.2-6.3-17.9-7.5-27.5-4.1c-2.9,1-5.6,2.7-8.1,4.5c-4,3-7.2,6.9-9.3,11.4C2.5,22.9,1.7,27.5,1.8,32.1z"/></svg>
+                    </button>
+                </div>
             </div>
         </div> 
     </section>
     <!-- Recommendations -->
     <section class="bg-blue-50 py-20">
-        <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
-            <div>
-            <!-- <p class="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-blue-900 uppercase rounded-full bg-blue-accent-400">
-                Il nostro blog
-            </p> -->
-            </div>
-            <h1 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
-                Articoli correlati
+        <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12 px-5">
+            <h1 class="max-w-lg mb-6 font-italiana text-3xl leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
+                <span class="text-deep-blue-500">A</span>rticoli 
+                <span class="text-deep-blue-500">C</span>orrelati
             </h1>
         </div>
-        <div class="container grid grid-cols-4 gap-4 mx-auto">
+        <div class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mx-auto px-5">
             <a href="#" aria-label="Article" class="rounded-xl bg-white relative">
                 <div class="relative w-full h-64">
                     <img src="https://source.unsplash.com/mtMFJz071Cs " class="object-cover w-full h-64 rounded-xl z-10" alt="" />
@@ -267,7 +269,7 @@
                     
                 </div>
             </a>
-            <a href="#" aria-label="Article" class="rounded-xl bg-white relative col-span-2">
+            <a href="#" aria-label="Article" class="rounded-xl bg-white relative lg:col-span-2">
                 <div class="relative w-full h-64">
                     <img src="https://source.unsplash.com/u4kVfgtloAM" class="object-cover w-full h-64 rounded-xl z-10" alt="" />
                 </div>
