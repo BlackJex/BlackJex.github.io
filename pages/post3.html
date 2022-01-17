@@ -367,5 +367,76 @@
         </div>
     </footer>
 
+    <!-- Chat -->
+    <div
+        x-data="{ messages:[] , showChat:false} "
+        class="fixed z-10 mb:bottom-5 lg:bottom-10 right-5 lg:right-10 flex-col items-center rounded-xl w-72">
+        <template x-if="showChat">
+            <button 
+                class="p-2 rounded-full ml-auto border bg-black bg-opacity-50 text-white flex items-center justify-center"
+                title="Chiudi"
+                @click="showChat = false">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 fill-current"><path d="M13.41,12l4.3-4.29a1,1,0,1,0-1.42-1.42L12,10.59,7.71,6.29A1,1,0,0,0,6.29,7.71L10.59,12l-4.3,4.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0L12,13.41l4.29,4.3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42Z"/></svg>
+            </button>
+        </template>
+        <template x-if="showChat">
+            <div class="inset-0 flex flex-col border-2 bg-gray-200 border-black rounded-lg">
+                <div class="p-3  rounded-t-lg bg-gray-200 border-b border-gray-500">
+                    <h1 class="text-xl font-bold"> 
+                        SH - Help
+                    </h1>
+                </div>
+                <div class="p-3 h-72 bg-gray-50 flex flex-col space-y-2 overflow-x-hidden overflow-y-auto overscroll-contain">
+                    <div class="text-left rounded-lg border bg-deep-blue-50 border-gray-300 p-2">
+                        <span class="text-sm">
+                            Ciao, come possiamo aiutarti?
+                        </span>
+                        <div class="flex flex-col items-start space-y-1 my-2">
+                            <button 
+                                class="py-1 px-2 rounded bg-deep-blue-500 text-white hover:bg-deep-blue-700 duration-300 hover: text-sm"
+                                @click=" () => {
+                                    messages.push('Dove posso trovare delle informazioni più dettagliate?');
+                                    setTimeout( () => 
+                                    {
+                                        messages.push('Per ogni informazione puoi contattarci cliccando <a target=\'_blank\' class=\'font-bold \' href=\'https://blackjex.github.io/pages/contacts.html \'>qui</a>');
+                                    }, 1000);
+                                }">
+                                Ho bisogno di info
+                            </button>
+                            <button 
+                                class="py-1 px-2 rounded bg-deep-blue-500 text-white hover:bg-deep-blue-700 duration-300 hover: text-sm"
+                                @click=" () => {
+                                    messages.push('Sto solo guardando, grazie');
+                                    setTimeout( () => 
+                                    {
+                                        messages.push('Perfetto! Per qualunque informazione, sono a tua disposizione :\)');
+                                    }, 1000);
+                                }">
+                                Sto solo guardando
+                            </button>
+                        </div>
+                    </div>
+                <template x-for=" (m, i) in messages">
+                        <div class="rounded-lg border border-gray-300 p-2"
+                            :class="i % 2 === 0 ? 'text-right bg-white' : 'text-left bg-deep-blue-50'">
+                            <span class="text-sm" x-html="m">
+                            </span>
+                        </div>
+                </template>
+                </div>
+                <div class="p-5  rounded-b-lg bg-gray-200 border-b border-gray-500">
+                </div>
+            </div>
+        </template>
+        <template x-if="!showChat">
+            <button 
+                class="p-2 rounded-full ml-auto border border-deep-blue-500 text-deep-blue-500 hover:bg-deep-blue-500 hover:text-white flex items-center justify-center duration-300"
+                title="Aiuto"
+                @click="showChat = true">
+                <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24" class="w-6 fill-current"><path d="M15.33252,9.5A3.5001,3.5001,0,0,0,8.80127,7.75a1.00016,1.00016,0,0,0,1.73242,1A1.50266,1.50266,0,0,1,11.83252,8a1.5,1.5,0,1,1,0,3h-.00244a.94984.94984,0,0,0-.18927.0387,1.03181,1.03181,0,0,0-.19861.04065.98275.98275,0,0,0-.15552.10485,1.00813,1.00813,0,0,0-.162.10975,1.00464,1.00464,0,0,0-.11706.1737.97789.97789,0,0,0-.09668.14417,1.02252,1.02252,0,0,0-.04285.21191A.94847.94847,0,0,0,10.83252,12v1l.00232.01135.0011.49109a1.00016,1.00016,0,0,0,1,.99756h.00244a1.00006,1.00006,0,0,0,.99756-1.00244l-.00153-.66138A3.49363,3.49363,0,0,0,15.33252,9.5Zm-4.20264,6.79A1,1,0,0,0,11.82959,18a1.036,1.036,0,0,0,.71045-.29,1.01517,1.01517,0,0,0,0-1.41992A1.03425,1.03425,0,0,0,11.12988,16.29Z"/></svg>
+            </button>
+        </template>
+    </div>
+
 </body>
 </html>
